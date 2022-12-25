@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+
+</head>
+
+<body>
+<input id="userId" type="text">아이디</input>
+
+<input id="userPassword" type="password">비밀번호</input>
+
+<input id="loginBtn" type="button">로그인</input>
+</body>
+<script>
+$("#loginBtn").click(function(){
+        var pass=$("#userPassword").val();
+        console.log($("#userId").val());
+        console.log(pass);
+
+});
+
+</script>
+</html>
