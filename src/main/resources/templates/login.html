@@ -13,6 +13,7 @@
 <input id="userPassword" type="password">비밀번호</input>
 
 <input id="loginBtn" type="button">로그인</input>
+<a href="main">main</a>
 </body>
 <script>
 $("#loginBtn").click(function(){
@@ -20,7 +21,12 @@ $("#loginBtn").click(function(){
         console.log($("#userId").val());
         console.log(pass);
 
+
+    return(location.href='main.html')
+
 });
 
 </script>
+
+
 </html>
