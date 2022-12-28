@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<input id="userId" type="text">아이디</input>
+<input id="userId" type="text" value="userId">아이디</input>
 
 <input id="userPassword" type="password">비밀번호</input>
 
@@ -16,6 +16,8 @@
 <a href="main">main</a>
 </body>
 <script>
+    console.log($("#userId").val());
+
 $("#loginBtn").click(function(){
         var pass=$("#userPassword").val();
         console.log($("#userId").val());

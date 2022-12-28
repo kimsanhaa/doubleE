@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,27 @@
 <body>
 <div>
     안녕하세요 !! ****님 반갑습니다.
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+        <tr th:each="user : ${data}">
+           <td>[[${user.name}]]</td>
+           <td>[[${user.age}]]</td>
+            <td><input type="button"/></td>
+        </tr>
+    </table>
+
+
+    <div>
+        선택한 사람의 이름
+        <input></input>
+    </div>
+    <div>
+        선택한 사람의 나이
+        <input></input>
+    </div>
 </div>
 </body>
 </html>
