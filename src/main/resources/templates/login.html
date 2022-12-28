@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<div id="temp">ddddd</div>
 <input id="userId" type="text" value="userId">아이디</input>
 
 <input id="userPassword" type="password">비밀번호</input>
@@ -19,12 +20,20 @@
     console.log($("#userId").val());
 
 $("#loginBtn").click(function(){
+
+        $("#userId").attr("value","value값 넣어주기!!!");
+
+        $("#userName").text();
+
         var pass=$("#userPassword").val();
         console.log($("#userId").val());
         console.log(pass);
 
 
-    return(location.href='main.html')
+
+
+
+   // return(location.href='main.html')
 
 });
 
