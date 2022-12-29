@@ -16,7 +16,7 @@ public class defaultController {
     //localhost:8080/main
     @GetMapping("")
     public  String home(){
-
+     
         return "login";
     }
 
