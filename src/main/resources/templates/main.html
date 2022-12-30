@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
-<div>안녕하세요 !!
-    <span id="userName">안정균</span>
-님 반갑습니다.</div>
-
-
-
-
 <div>
-    안녕하세요 !! ****님 반갑습니다.
+    안녕하세요 !! **님 반갑습니다.
     <table>
-        <tr>
-            <th>이름</th>
+        <tr>// 테이블 행
+            <th>이름</th> // 제목 셀
             <th>나이</th>
         </tr>
-        <tr th:each="user : ${data}">
-           <td>[[${user.name}]]</td>
-           <td>[[${user.age}]]</td>
-            <td><input type="button"/></td>
+        <tr th:each="user : ${data}">   // data는 어디에?
+            <td>[[${user.name}]]</td>
+            <td>[[${user.age}]]</td>
+            <td><input id="btn" type="button"/></td>   // name으로 접근하는것도 안됨
+            <td><input id="hval" type="hidden" value="hello"></td>
         </tr>
     </table>
 
 
     <div>
         선택한 사람의 이름
-        <input></input>
+        <input id="thisName"></input>
     </div>
     <div>
         선택한 사람의 나이
-        <input></input>
+        <input id="thisAge"></input>
     </div>
 </div>
 </body>
+
+<script>
+    urlget = new URLSearchParams(location.search);
+    var usrid = urlget.getAll('name');
+    console.log(usrid);
+
+    $("#userName").text(usrid);
+
+    console.log($("#hval").val());
+
+    $("#btn").click(function(){
+        var thName = $("#hval").val();
+        $("#thisName").val(thName); // 타임리프 변수(?)를 어떻게 가져올지
+    })
+
+    //new URLSearchParams(location.search).get(name:"name");
+    //안녕하세요!! usrid님 반갑습니다!
+    //document.write("안녕하세요!! "+ usrid + "님 반갑습니다!");
+</script>
+
 </html>
