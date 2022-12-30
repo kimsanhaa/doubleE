@@ -9,8 +9,8 @@
 <div>
     안녕하세요 !! **님 반갑습니다.
     <table>
-        <tr>// 테이블 행
-            <th>이름</th> // 제목 셀
+        <tr>
+            <th>이름</th>
             <th>나이</th>
         </tr>
         <tr class="trTag"th:each="user : ${data}">   // data는 어디에?
@@ -18,20 +18,20 @@
             <td>[[${user.name}]]</td>
             <td>[[${user.age}]]</td>
             <td><input class="btn" type="button"/></td>   // name으로 접근하는것도 안됨
-            <td><input id="hval"  th:value="${user.name}"></td>
+
         </tr>
     </table>
 
 
-    <div>
-        선택한 사람의 이름
-        <input id="thisName"></input>
-    </div>
-    <div>
-        선택한 사람의 나이
-        <input id="thisAge"></input>
-    </div>
 </div>
+
+<table id="2ndTable">
+    <tr>
+        <th>이름</th>
+        <th>나이</th>
+    </tr>
+
+</table>
 </body>
 
 <script>
@@ -46,11 +46,29 @@
     //console.log($("#hval").val());
 
     $(".btn").click(function(){
-        console.log();
+
+
+        $("#2ndTable").children().append("<tr><td>");
+        $("#2ndTable").children().append($(this).parent().prev().prev().text());
+        $("#2ndTable").children().append("</td><td>");
+
+        $("#2ndTable").children().append($(this).parent().prev().text());
+        $("#2ndTable").children().append("</td></tr>");
+
+
+        $(this).parent().siblings().remove();
+        $(this).parent().remove();
 
 
 
-      //  $("#thisName").val(thName); // 타임리프 변수(?)를 어떻게 가져올지
+
+
+
+        // parents -> 전부다 지워짐
+        // parent -> 버튼만 지워짐
+
+
+
     })
 
     //new URLSearchParams(location.search).get(name:"name");
