@@ -13,11 +13,11 @@
             <th>이름</th>
             <th>나이</th>
         </tr>
-        <tr class="trTag"th:each="user : ${data}">   // data는 어디에?
+        <tr class="trTag"th:each="user : ${data}">
 
             <td>[[${user.name}]]</td>
             <td>[[${user.age}]]</td>
-            <td><input class="btn" type="button"/></td>   // name으로 접근하는것도 안됨
+            <td><input class="btn" type="button"/></td>
 
         </tr>
     </table>
@@ -36,7 +36,7 @@
 
 <script>
     var tempData = "[[${data}]]";
-    console.log(tempData);
+    //console.log(tempData);
     urlget = new URLSearchParams(location.search);
     var usrid = urlget.getAll('name');
   //  console.log(usrid);
