@@ -1,4 +1,4 @@
-package toy.project.doubleE;
+package toy.project.doubleE.controller;
 
 
 import org.springframework.stereotype.Controller;
