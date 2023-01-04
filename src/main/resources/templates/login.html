@@ -4,20 +4,30 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>LOGIN</title>
+    <link rel="stylesheet" href="./style.css" >   <!-- css 적용 -->
+
+    <style>
+
+        #loginBox { background-color: aqua; }
+
+    </style>
 
 </head>
 
 <body>
-<div id="temp">승현이</div>
-<input id="userId" type="text" value="userId">아이디</input>
+<div id="temp"></div>
+<span id="loginBox">
+    <input id="userId" type="text">아이디</input><br>
 
-<input id="userPassword" type="password">비밀번호</input>
+    <input id="userPassword" type="password">비밀번호</input><br>
 
-<input id="loginBtn" type="button">로그인</input>
-<a href="main">sssss</a>
+    <input id="loginBtn" type="button">로그인</input>
+</span>
+
+<a href="main">sss</a>
 </body>
 <script>
-    console.log($("#userId").val());
+    //console.log($("#userId").val());
 
 $("#loginBtn").click(function(){
 
