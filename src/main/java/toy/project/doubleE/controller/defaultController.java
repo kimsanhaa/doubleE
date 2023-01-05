@@ -1,9 +1,11 @@
 package toy.project.doubleE.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import toy.project.doubleE.service.memberService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +14,11 @@ import java.util.Map;
 @Controller
 public class defaultController {
     //localhost:8080/main
+
+
+    @Autowired
+    private memberService memberserive;
+
     @GetMapping("")
     public  String home(){
      
@@ -78,8 +85,19 @@ public class defaultController {
         return "getAjax response"+name;
     }
 
-    @GetMapping("/memberjoin")  // 회원가입창 이동
-    public String memberjoin(){
-        return "memberjoin";
+    @GetMapping("/memberJoin")  // 회원가입창 이동
+    public String join(){
+        return "memberJoin";
+    }
+
+    @PostMapping("memberJoin")
+    @ResponseBody
+    public String joinRequest(
+            @RequestParam String name,
+            @RequestParam String age ,
+            @RequestParam String id,
+            @RequestParam String password){
+
+        return memberserive.joinCheck(name,age,id,password);
     }
 }
