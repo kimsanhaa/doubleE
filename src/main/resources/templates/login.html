@@ -4,40 +4,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="./style.css" >   <!-- css 적용 -->
+    <link rel="stylesheet" href="style.css" >   <!-- css 적용 -->
 
-    <style>
-        html { background-color: lightcyan }
-        #loginBox {
-            width: 200px;
-            margin: auto;
-            /* 이게 맞는표현?*/
-            padding: 20px 20px 20px 20px;
-            background-color: white;
-        }
-        #titleBox{
-            display: block;
-            width: 220px;
-            margin: auto;
-            margin-top: 200px;
-            background-color: darkcyan;
-            color: white;
-            font-size: larger;
-            padding: 10px 10px 10px 10px;
-            text-align: center;
-        }
-        #userId, #userPassword{
-            background-color: azure;
-        }
-        .Btn{
-            width : 83px;
-            background-color: darkcyan;
-            color: white;
-            margin: auto;
-        }
-
-
-    </style>
 
 </head>
 
@@ -65,7 +33,25 @@
 
 $("#loginBtn").click(function(){
 
-        $("#userId").attr("value","value값 넣어주기!!!");
+    var pwCheck = /^[0-9]$/
+    alert(pwCheck.test($("#userPassword").val()));
+    console.log($("#userPassword").val());
+
+
+
+    if($("#userId").val().length>=5){
+        alert("ID는 5글자 미만이어야 합니다!");
+    }
+    if(($("#userPassword").val().length<10)||(pwCheck.test($("#userPassword").val()))){
+        if($("#userPassword").val().length<10){
+            alert("PW는 10글자 이상이어야 합니다!");
+        }
+        if(pwCheck.test($("#userPassword").val())){
+            alert("PW는 숫자가 포함되면 안됩니다");
+        }
+    }
+
+
 
         $("#userName").text();
 
@@ -79,6 +65,12 @@ $("#loginBtn").click(function(){
 
    // return(location.href='main.html')
 
+});
+
+// 1.05 추가(회원가입)
+$("#membershipBtn").click(function(){
+    //버튼 클릭시 memberjoin.html로 이동
+    location.href="memberjoin"; // 이동 됨!
 });
 
 </script>

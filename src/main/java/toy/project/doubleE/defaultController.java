@@ -77,4 +77,9 @@ public class defaultController {
     ){
         return "getAjax response"+name;
     }
+
+    @GetMapping("/memberjoin")  // 회원가입창 이동
+    public String memberjoin(){
+        return "memberjoin";
+    }
 }
