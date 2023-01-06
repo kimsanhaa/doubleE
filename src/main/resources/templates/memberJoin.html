@@ -20,13 +20,13 @@
 
     $("#joinBtn").click(function () {
         $.ajax({
-            type : 'get',
-            uri : '/memberJoin',
+            type : 'POST',
+            uri : 'memberJoin',
             data : {
-                'name' : $("#newName").val(),
+                'name' : $("#newName").val(),   // 받는부분 변수이름과 같아야 한다
                 'age' : $("#newAge").val(),
                 'id' : $("#newId").val(),
-                'pw' : $("#newPW").val()
+                'password' : $("#newPW").val()
             },
             success : function (res){
                 console.log(res);
