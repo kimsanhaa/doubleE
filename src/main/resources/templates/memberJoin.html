@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>회원가입</title>
 </head>
 <body>
 
+    <input id="newName" type="text">이름</input><br>
+    <input id="newAge" type="number">나이</input><br>
+    <input id="newId" type="text">ID</input><br>
+    <input id="newPW" type="text">PW</input><br>
+
+    <button id="joinBtn" type="button">회원가입</button>
+
 </body>
+
+<script>
+
+    $("#joinBtn").click(function () {
+        $.ajax({
+            type : 'get',
+            uri : '/memberJoin',
+            data : {
+                'name' : $("#newName").val(),
+                'age' : $("#newAge").val(),
+                'id' : $("#newId").val(),
+                'pw' : $("#newPW").val()
+            },
+            success : function (res){
+                console.log(res);
+            },
+            error : function(error){
+                console.log(error);
+            }
+        })
+    });
+
+
+
+
+
+</script>
+
 </html>
