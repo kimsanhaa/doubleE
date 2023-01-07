@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import toy.project.doubleE.service.memberService;
+import toy.project.doubleE.service.MemberService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,17 +14,14 @@ import java.util.Map;
 @Controller
 public class defaultController {
     //localhost:8080/main
-
-
     @Autowired
-    private memberService memberserive;
+    private MemberService memberserive;
 
     @GetMapping("")
     public  String home(){
      
         return "login";
     }
-
 
     //localhost:8080/main
     @GetMapping("/main") //받는애 get방식으로

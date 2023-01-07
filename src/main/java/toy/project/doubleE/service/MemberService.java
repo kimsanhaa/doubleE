@@ -3,11 +3,8 @@ package toy.project.doubleE.service;
 import org.springframework.stereotype.Service;
 import toy.project.doubleE.dto.memberDto;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Service
-public class memberService {
+public class MemberService {
 
 
 
