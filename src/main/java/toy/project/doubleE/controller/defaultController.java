@@ -1,6 +1,7 @@
 package toy.project.doubleE.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +11,7 @@ import toy.project.doubleE.service.MemberService;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+@Slf4j
 @Controller
 public class defaultController {
     //localhost:8080/main
@@ -97,4 +98,6 @@ public class defaultController {
 
         return memberserive.joinCheck(name,age,id,password);
     }
+
+
 }
