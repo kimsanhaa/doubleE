@@ -1,0 +1,63 @@
+html { background-color: lightcyan }
+
+
+#titleBox {
+    position: fixed;
+    top: 123px;
+    left: 614px;
+    width: 372px;
+    height: 44px;
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+#joinBox {
+    position: fixed;
+    top: 167px;
+    left: 614px;
+    width: 372px;
+    height: 450px;
+    /*padding: 20px 20px 20px 20px;*/
+    background-color: white;
+}
+
+#newAge, #newId, #newName, #newPW {
+    position: fixed;
+    left: 699px;
+    margin:auto;
+    width: 206px;
+    height: 32px;
+    background-color: azure;
+}
+#newName {
+    position: fixed;
+    top: 264px;
+}
+#newAge {
+    position: fixed;
+    top: 304px;
+}
+#newId {
+    position: fixed;
+    top: 344px;
+}
+#newPW {
+    position: fixed;
+    top: 384px;
+}
+
+#joinBtn {
+    position: fixed;
+    left: 738px;
+    top: 464px;
+    width: 129px;
+    height: 46px;
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+}
+

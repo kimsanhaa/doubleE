@@ -4,15 +4,21 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>회원가입</title>
+    <link rel="stylesheet" href="memberJoinStyle.css" >
 </head>
 <body>
-
+<div id = "titleBox">
+    회원가입
+</div>
+<div id="joinBox">
     <input id="newName" type="text">이름</input><br>
     <input id="newAge" type="number">나이</input><br>
     <input id="newId" type="text">ID</input><br>
     <input id="newPW" type="text">PW</input><br>
 
-    <button id="joinBtn" type="button">회원가입</button>
+    <button id="joinBtn" type="button">회원가입하기</button>
+</div>
+
 
 </body>
 
@@ -24,7 +30,7 @@
             uri : 'memberJoin',
             data : {
                 'name' : $("#newName").val(),   // 받는부분 변수이름과 같아야 한다
-                'age' : $("#newAge").val(),     // 한게없어도 커밋(내일지우기)
+                'age' : $("#newAge").val(),
                 'id' : $("#newId").val(),
                 'password' : $("#newPW").val()
             },
