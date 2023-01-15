@@ -1,10 +1,20 @@
 html { background-color: lightcyan }
 
 
+#mainBox {
+    position: fixed;
+    left: 50%;
+    /*transform: translateX(-50%);*/
+}
+
 #titleBox {
     position: fixed;
     top: 123px;
-    left: 614px;
+    /*left: 614px;*/
+    /*
+    left: 50%;
+    transform: translate(-50%);*/
+    transform: translateX(-50%);
     width: 372px;
     height: 44px;
     background-color: darkcyan;
@@ -13,10 +23,15 @@ html { background-color: lightcyan }
     font-size: 24px;
 }
 
+
+
 #joinBox {
     position: fixed;
     top: 167px;
-    left: 614px;
+    /*left: 614px;*/
+    /*left: 50%;
+    transform: translate(-50%);*/
+
     width: 372px;
     height: 450px;
     /*padding: 20px 20px 20px 20px;*/
@@ -25,14 +40,17 @@ html { background-color: lightcyan }
 
 #newAge, #newId, #newName, #newPW {
     position: fixed;
-    left: 699px;
-    margin:auto;
+    /*left: 699px;*/
+    /*left: 50%;
+    transform: translate(-50%);*/
+    transform: translateX(-50%);
     width: 206px;
     height: 32px;
     background-color: azure;
 }
 #newName {
     position: fixed;
+
     top: 264px;
 }
 #newAge {
@@ -50,7 +68,11 @@ html { background-color: lightcyan }
 
 #joinBtn {
     position: fixed;
-    left: 738px;
+    /*left: 738px;*/
+    /*
+    left: 50%;
+    transform: translate(-50%);*/
+    transform: translateX(-50%);
     top: 464px;
     width: 129px;
     height: 46px;
