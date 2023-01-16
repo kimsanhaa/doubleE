@@ -4,74 +4,68 @@ html { background-color: lightcyan }
 #mainBox {
     position: fixed;
     left: 50%;
-    /*transform: translateX(-50%);*/
 }
 
 #titleBox {
     position: fixed;
     top: 123px;
     /*left: 614px;*/
-    /*
-    left: 50%;
-    transform: translate(-50%);*/
     transform: translateX(-50%);
     width: 372px;
     height: 44px;
     background-color: darkcyan;
+}
+
+#semiTitle{
     color: white;
     text-align: center;
     font-size: 24px;
+    line-height: 44px;
 }
-
 
 
 #joinBox {
     position: fixed;
     top: 167px;
     /*left: 614px;*/
-    /*left: 50%;
-    transform: translate(-50%);*/
+    transform: translate(-50%);
 
     width: 372px;
     height: 450px;
-    /*padding: 20px 20px 20px 20px;*/
     background-color: white;
 }
 
-#newAge, #newId, #newName, #newPW {
+#nameInput, #ageInput, #idInput, #pwInput {
     position: fixed;
     /*left: 699px;*/
-    /*left: 50%;
-    transform: translate(-50%);*/
-    transform: translateX(-50%);
+    /*transform: translate(-50%);*/
+    transform: translateX(-103px);
+    width: 264px;
+    height: 32px;
+    background-color: white;
+}
+#newName, #newAge, #newId, #newPW {
     width: 206px;
     height: 32px;
     background-color: azure;
 }
-#newName {
-    position: fixed;
 
+#nameInput {
     top: 264px;
 }
-#newAge {
-    position: fixed;
+#ageInput {
     top: 304px;
 }
-#newId {
-    position: fixed;
+#idInput {
     top: 344px;
 }
-#newPW {
-    position: fixed;
+#pwInput {
     top: 384px;
 }
 
 #joinBtn {
     position: fixed;
     /*left: 738px;*/
-    /*
-    left: 50%;
-    transform: translate(-50%);*/
     transform: translateX(-50%);
     top: 464px;
     width: 129px;
