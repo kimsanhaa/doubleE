@@ -53,25 +53,31 @@ html { background-color: lightcyan }
 input::placeholder {
     font-size: 16px;
 }
-
+/*input tag들 간격 조정 -> Figma도 수정*/
 #nameInput {
     top: 264px;
 }
 #ageInput {
-    top: 304px;
+    top: 324px;
+    font-size: 12px;
+    color: red;
 }
 #idInput {
-    top: 344px;
+    top: 384px;
+    font-size: 12px;
+    color: red;
 }
 #pwInput {
-    top: 384px;
+    top: 444px;
+    font-size: 12px;
+    color: red;
 }
 
 #joinBtn {
     position: fixed;
     /*left: 738px;*/
     transform: translateX(-50%);
-    top: 464px;
+    top: 524px;
     width: 129px;
     height: 46px;
     background-color: darkcyan;
@@ -80,4 +86,5 @@ input::placeholder {
     font-size: 16px;
     border: none;
 }
+
 

@@ -25,7 +25,21 @@
 
 <script>
 
+    var pwNoCheck = /^[0-9]$/;
+    var pwEnCheck = /^[a-zA-Z]$/;
+    var pwCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,20}$/;
     $("#joinBtn").click(function () {
+        //유효성검사 --> 나이-> 100살 미만:: id -> 20자 미만:: pw -> 영문, 숫자를 포함한 8글자 이상::
+        if($("#newAge").val()>=100){
+            $("#newAge").after("나이는 100살 미만이어야 합니다.");
+        }
+        if($("#newId").val().length >=20){
+            $("#newId").after("아이디는 20자 미만이어야 합니다.");
+        }
+        if(!pwCheck.test($("#newPW").val())){
+            $("#newPW").after("비밀번호는 영문, 숫자를 포함한 8~20 글자 이어야 합니다.");
+        }
+
         $.ajax({
             type : 'POST',
             uri : 'memberJoin',
