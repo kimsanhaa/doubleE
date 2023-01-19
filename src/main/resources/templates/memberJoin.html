@@ -28,20 +28,47 @@
     var pwNoCheck = /^[0-9]$/;
     var pwEnCheck = /^[a-zA-Z]$/;
     var pwCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,20}$/;
+    var nameNoCheck = /[0-9]/;
+    var nameSpCheck =  /[~!@#$%^&*()_+|<>?:{}]/;
+    //var nameCheck = /[0-9][~!@#$%^&*()_+|<>?:{}]/;
+    // 버튼활성/비활성화
+    $("#joinBtn").prop("disabled", true);
+
+    $("input").on('keyup', function (){
+        if($(this).val().length>0){
+            $("#joinBtn").prop("disabled", false);
+        }
+        else{
+            $("#joinBtn").prop("disabled", true);
+        }
+    })
+
+
+
+
+    if(($("#newName").val()=="") && ($("#newAge").val()=="") && ($("#newID").val()=="") && ($("#newPW").val()=="")){
+        //alert("내용없음");
+        $("#joinBtn").prop("disabled", true);
+    }
+
     $("#joinBtn").click(function () {
-        //유효성검사 --> 나이-> 100살 미만:: id -> 20자 미만:: pw -> 영문, 숫자를 포함한 8글자 이상::
+        //유효성검사 --> 나이-> 100살 미만:: id -> 20자 미만:: pw -> 영문, 숫자를 포함한 8~20글자::
         $("span").remove('.IncorrectMessage');  // 경고메세지 지우기
 
         // 미입력, 유효성 검사
         if($("#newName").val() == ""){   // 이름 미입력시
             $("#newName").after("<span class='IncorrectMessage'>이름을 입력해 주세요.</span>");
         }
+        if(($("#newName").val()) != "" && (nameSpCheck.test($("#newName").val())||(nameNoCheck.test($("#newName").val())) )){
+            // 이름 유효성
+            $("#newName").after("<span class='IncorrectMessage'>이름은 숫자와 특수문자를 포함할 수 없습니다.</span>");
+        }
         if($("#newAge").val() == ""){   // 나이 미입력시
             $("#newAge").after("<span class='IncorrectMessage'>나이를 입력해 주세요.</span>");
-        }
+        }/*                             // 나이 유효성 검사는 실시하지 않음
         if($("#newAge").val()>=100){    // 나이 유효성
             $("#newAge").after("<span class='IncorrectMessage'>나이는 100살 미만이어야 합니다.</span>");
-        }
+        }*/
         if($("#newId").val() == ""){   // ID 미입력시
             $("#newId").after("<span class='IncorrectMessage'>아이디를 입력해 주세요.</span>");
         }
@@ -58,7 +85,8 @@
         // 1. 19
         // 추가하고 싶은 기능 ::  1. mainbox 내부 클릭시 경고메시지 지우기
         //                     2. 경고메세지 출력 시 ajax 전송하지 않음
-        // 추가해야 하는 기능 ::  1. 이름, 나이, ID, PW 모두 빈칸이면 회원가입 버튼 비활성화
+        //                     3. 버튼에 마우스 댈 때 활성화 여부 표시
+
 
         $.ajax({
             type : 'POST',
@@ -77,6 +105,7 @@
             }
         })
     });
+
 
 
 
