@@ -8,10 +8,10 @@
 </head>
 <body>
 <div id = "mainBox">
-    <div id = "titleBox">
+    <div id = "titleBox" class = "bound">
         <div id="semiTitle">회원가입</div>
     </div>
-    <div id="joinBox"></div>
+    <div id="joinBox" class = "bound"></div>
     <span id="nameInput"><input id="newName" type="text" placeholder="이름"></input></span>
     <span id="ageInput"><input id="newAge" type="number" placeholder="나이"></input></span>
     <span id="idInput"><input id="newId" type="text" placeholder="아이디"></input></span>
@@ -34,7 +34,7 @@
     // 버튼활성/비활성화
     $("#joinBtn").prop("disabled", true);
 
-    $("input").on('keyup', function (){
+    $("input").on('keyup', function (){ // input tag말고 다른것 사용
         if($(this).val().length>0){
             $("#joinBtn").prop("disabled", false);
         }
@@ -84,8 +84,8 @@
 
         // 1. 19
         // 추가하고 싶은 기능 ::  1. mainbox 내부 클릭시 경고메시지 지우기
-        //                     2. 경고메세지 출력 시 ajax 전송하지 않음
-        //                     3. 버튼에 마우스 댈 때 활성화 여부 표시
+        //                     2. 버튼에 마우스 댈 때 활성화 여부 표시
+        //                     3. 경고메세지 출력 시 ajax 전송하지 않음
 
 
         $.ajax({
@@ -106,6 +106,10 @@
         })
     });
 
+
+    $(".bound").click(function (){
+        $("span").remove('.IncorrectMessage');
+    })
 
 
 

@@ -1,0 +1,23 @@
+html { background-color: #8cd6db }
+
+#imageD{
+    width: 66px;
+    height:66px;
+}
+
+#semiBox_1{
+    display: inline-block;
+    width: 768px;
+    height: 66px;
+}
+#semiBox_1{
+    display: inline-block;
+    width: 768px;
+    height: 66px;
+}
+
+#semiTitle {
+    color: white;
+    text-align: center;
+    line-height: 66px;
+}
