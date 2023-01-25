@@ -8,26 +8,106 @@
 </head>
 <body>
     <div>
-        <div>
+        <div id="firstDiv">
 
             <span id="semiBox_1">
-                <span><img id="imageD" src = "D.png" alt="D"></span>
+                <span id="imgSpan"><img id="imageD" src = "D.png" alt="D"></span>
                 <span id="semiTitle">DoubleS 대학교 수강신청</span> <!--상하정렬-->
             </span>
             <span id="semiBox_2">
-                이름<input id ="userName" value="승현">
-                학년<input id ="userGrade" value="4">
-                학번<input id ="userNum" value="201501652">
+                이름<input class="myInput" id ="userName" value="승현">
+                학년<input class="myInput" id ="userGrade" value="4">
+                학번<input class="myInput" id ="userNum" value="201501652">
             </span>
 
 
         </div>
 
-        <div>
+        <div id="sideDiv">
+            <input id="searchInput">
+            <button id="searchButton">검색</button>
+        </div>
+
+        <div id="secondDiv">
+            <div class="titleDiv">
+                <span class="titleSpan">▶개설강의</span>
+            </div>
+            <div class="gapDiv">
+            </div>
+            <div class="tableDiv">
+                <table class="lecTable" id="lectureTable">
+                    <th>신청</th>
+                    <th>이수구분</th>
+                    <th>과목번호</th>
+                    <th>과목명</th>
+                    <th>학점</th>
+                    <th>담당교수</th>
+                    <th>강의실</th>
+                    <tr>
+                        <td> <button class="tempButton" >신청</button> </td><td>전공</td><td>15</td><td>임베디드</td><td>3</td><td>조중휘</td><td>S7-304</td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+            </div>
 
         </div>
-        <div>
 
+        <div id="thirdDiv">
+            <div class="titleDiv">
+                <span class="titleSpan">▶수강확정내역</span>
+                <span id="infoSpan">신청학점 : <span id="subGrade">3</span>/ 신청과목 수 : <span id="subNum">1</span> </span>
+            </div>
+            <div class="gapDiv">
+            </div>
+            <div class="tableDiv">
+                <table class="lecTable" id="myLectureTable">
+                    <th>신청</th>
+                    <th>이수구분</th>
+                    <th>과목번호</th>
+                    <th>과목명</th>
+                    <th>학점</th>
+                    <th>담당교수</th>
+                    <th>강의실</th>
+                    <tr>
+                        <td> <button class="tempButton" >삭제</button> </td><td>전공</td><td>15</td><td>임베디드</td><td>3</td><td>조중휘</td><td>S7-304</td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>
