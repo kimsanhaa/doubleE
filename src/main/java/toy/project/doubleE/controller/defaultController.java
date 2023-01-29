@@ -3,11 +3,13 @@ package toy.project.doubleE.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import toy.project.doubleE.service.MemberService;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -96,7 +98,15 @@ public class defaultController {
             @RequestParam String id,
             @RequestParam String password){
 
+
         return memberserive.joinCheck(name,age,id,password);
+    }
+
+    @GetMapping("login")
+    @ResponseBody
+    public String login(@RequestParam String id, @RequestParam String password, HttpSession session){
+
+        return memberserive.loginCheck(id,password);
     }
 
 
