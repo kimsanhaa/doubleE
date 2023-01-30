@@ -53,15 +53,21 @@ $(document).on("click", ".tempDelButton", function (){      // 삭제 버튼을 
     var delLec = $(this).parent().next().next().next().text();
     console.log(delLec);
 
-    console.log($("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children());
+    //console.log($("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children());
     //console.log($("#lectureTable").find("td:contains("+delLec+")").parent().prev().prev().prev().children());
     //$("#lectureTable").find("td:contains("+delLec+")").parent().prev().prev().prev().children().prop("disabled", false);
     //console.log(this.parentNode.parentNode);
     $("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children().prop("disabled", false);
-    $(this).parent().parent();     // -> this.parent 를 사용하면 empty()로 지워도 행자체가 지워짐
+    //$(this).parent().parent();     // -> this.parent 를 사용하면 empty()로 지워도 행자체가 지워짐
     //$("#myLectureTable").find("tr:eq("+myLectureCount+")").empty();
     //console.log($(this).parent());
     //console.log($("#myLectureTable").find("tr:eq("+myLectureCount+")"));
+    var cur = $(this).next();
+    console.log(cur);
+    for(let i=0;i<sublist2.length;i++){
+        cur.html("");
+        cur = cur.next;
+    }
     myLectureCount --;
     // 과목 삭제 기능, 과목 삭제 시 버튼 다시 활성화 기능
 
