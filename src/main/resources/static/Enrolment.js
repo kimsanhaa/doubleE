@@ -67,6 +67,17 @@ $(document).on("click", ".tempButton", function (){     // 신청 버튼을 누�
     $(this).css({background: "red"});   // 비활성화된 강의는 색상 변경
 
     //console.log(myLectureCount);
+    let sg = 0;
+    sg = Number(sg);
+    let sn = mySubtable.length;
+    for(let i = 0;i<mySubtable.length;i++){
+        sg += Number(mySubtable[i][3]);
+    }
+    $("#subGrade").text(sg);
+    $("#subNum").text(sn);
+
+
+
 })
 
 
@@ -91,7 +102,14 @@ $(document).on("click", ".tempDelButton", function (){      // 삭제 버튼을 
     }
     $("#myLectureTable").append(newRow);
 
-
+    let sg = 0;
+    sg = Number(sg);
+    let sn = mySubtable.length;
+    for(let i = 0;i<mySubtable.length;i++){
+        sg += Number(mySubtable[i][3]);
+    }
+    $("#subGrade").text(sg);
+    $("#subNum").text(sn);
 
     //console.log($("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children());
     //console.log($("#lectureTable").find("td:contains("+delLec+")").parent().prev().prev().prev().children());
