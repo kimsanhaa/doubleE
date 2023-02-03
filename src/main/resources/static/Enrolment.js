@@ -98,7 +98,7 @@ $(document).on("click", ".tempButton", function (){     // 신청 버튼을 누�
     $(this).prop("disabled", true);     // 신청한 강의는 버튼 비활성화
     $(this).css({background: "red"});   // 비활성화된 강의는 색상 변경
 
-    //console.log(myLectureCount);
+    // 신청학점/ 과목수 계산;
     let sg = 0;
     sg = Number(sg);
     let sn = mySubtable.length;
@@ -124,13 +124,14 @@ $(document).on("click", ".tempDelButton", function (){      // 삭제 버튼을 
         }
     }
 
-    $(".tRow").empty();
+    $(".tRow").empty();     // 테이블 내용 숨기기
     var newRow;
     for(let i=0;i<mySubtable.length;i++){
         newRow += "<tr class = \"tRow\"><td> <button class=\"tempDelButton\" >삭제</button> </td><td>"+mySubtable[i][0]+"</td><td>"+mySubtable[i][1]+"</td><td>"+mySubtable[i][2]+"</td><td>"+mySubtable[i][3]+"</td><td>"+mySubtable[i][4]+"</td><td>"+mySubtable[i][5]+"</td></tr>"
     }
-    $("#myLectureTable").append(newRow);
+    $("#myLectureTable").append(newRow);    // 테이블에수정된 내용 표시
 
+    // 신청학점/ 과목수 계산
     let sg = 0;
     sg = Number(sg);
     let sn = mySubtable.length;
@@ -140,15 +141,11 @@ $(document).on("click", ".tempDelButton", function (){      // 삭제 버튼을 
     $("#subGrade").text(sg);
     $("#subNum").text(sn);
 
-    //console.log($("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children());
-    //console.log($("#lectureTable").find("td:contains("+delLec+")").parent().prev().prev().prev().children());
-    //$("#lectureTable").find("td:contains("+delLec+")").parent().prev().prev().prev().children().prop("disabled", false);
-    //console.log(this.parentNode.parentNode);
+
+
     $("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children().prop("disabled", false);
-    //$(this).parent().parent();     // -> this.parent 를 사용하면 empty()로 지워도 행자체가 지워짐
-    //$("#myLectureTable").find("tr:eq("+myLectureCount+")").empty();
-    //console.log($(this).parent());
-    //console.log($("#myLectureTable").find("tr:eq("+myLectureCount+")"));
+    $("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children().css({background: "#148FC3"})
+    //console.log($("#lectureTable").find("td:contains("+delLec+")").prev().prev().prev().children());
     /*
     var cur = $(this).next();
     console.log(cur);
