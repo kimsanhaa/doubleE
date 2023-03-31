@@ -25,6 +25,7 @@ $(document).on("keyup", "#searchInput", function (){   // 입력칸에 keyup 이
     //$("#lectureTable > tbody > tr").hide();
     $(".sRow").hide();
     var cVal = $("#searchInput").val();
+    var a = 1;
     var temp = $("#lectureTable > tbody > tr > td:contains("+ cVal +")");
     $(temp).parent().show();
     //var temp = $("#lectureTable > tbody > tr > td:eq(3):contains("+ cVal +")");
@@ -32,7 +33,7 @@ $(document).on("keyup", "#searchInput", function (){   // 입력칸에 keyup 이
     // 특정 row만 지우는 방법 사용
 })
 
-// '과목명' 으로만 검색(검색버튼 클릭 event)
+// '과목명' 으로만 검색(검색버튼 클릭 event)dwadgwadkjhg
 /*
 $(document).on("click", "#searchButton", function (){
     $(".sRow").hide();
