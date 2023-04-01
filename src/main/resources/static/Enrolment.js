@@ -40,7 +40,7 @@ $(document).on("click", "#searchButton", function (){
     var tem1;
     for(let i=1;i<=subtable.length;i++){
         tem1 = subtable[i-1][2];
-        if(tem1 == $("#searchInput").val()){
+        if(tem1 == $("#searchInput").val()){213
             var tem2 = $("#lectureTable > tbody > tr:eq("+ i +")");
             console.log(tem2);
             $(tem2).show();
