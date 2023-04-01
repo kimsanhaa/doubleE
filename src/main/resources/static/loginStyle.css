@@ -1,0 +1,29 @@
+
+html { background-color: lightcyan }
+#loginBox {
+    width: 200px;
+    margin: auto;
+    /* 이게 맞는표현?*/
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+}
+#titleBox{
+    display: block;
+    width: 220px;
+    margin: auto;
+    margin-top: 200px;
+    background-color: darkcyan;
+    color: white;
+    font-size: larger;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+#userId, #userPassword{
+    background-color: azure;
+}
+.Btn{
+    width : 83px;
+    background-color: darkcyan;
+    color: white;
+    margin: auto;
+}

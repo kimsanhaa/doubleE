@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta charset="UTF-8">
+    <title>수강신청</title>
+    <link rel="stylesheet" href="enrolmentStyle.css" >
+</head>
+<body>
+    <div>
+        <div id="firstDiv">
+
+            <span id="semiBox_1">
+
+                <span id="imgSpan"><img id="imageD" src = "D.png" alt="D"></span>
+                <span id="semiTitle">DoubleS 대학교 수강신청</span>
+            </span>
+            <span id="semiBox_2">
+                이름<input class="myInput" id ="userName" value="승현">
+                학년<input class="myInput" id ="userGrade" value="4">
+                학번<input class="myInput" id ="userNum" value="201501652">
+            </span>
+
+
+        </div>
+
+        <div id="sideDiv">
+            <input id="searchInput" placeholder="과목명">
+            <button id="searchButton">검색</button>
+        </div>
+
+        <div id="secondDiv">
+            <div class="titleDiv">
+                <span class="titleSpan">▶개설강의</span>
+            </div>
+            <div class="gapDiv">
+            </div>
+            <div class="tableDiv">
+                <table class="lecTable" id="lectureTable">
+                    <th>신청</th>
+                    <th>이수구분</th>
+                    <th>과목코드</th>
+                    <th>과목명</th>
+                    <th>학점</th>
+                    <th>담당교수</th>
+                    <th>강의실</th>
+                    <tr class = "sRow">
+                        <td> <button class="tempButton" >신청</button> </td><td>전공</td><td>15</td><td>임베디드개론</td><td>3</td><td>조중휘</td><td>S7-304</td>
+                    </tr>
+                    <tr class = "sRow">
+                        <td> <button class="tempButton" id="realBtn">신청</button> </td><td>전공</td><td>16</td><td>C언어</td><td>3</td><td>전경구</td><td>S7-306</td>
+                    </tr>
+                    <tr class = "sRow">
+                        <td> <button class="tempButton" >신청</button> </td><td>전공</td><td>17</td><td>펌웨어</td><td>3</td><td>강석훈</td><td>S7-314</td>
+                    </tr>
+                    <tr class = "sRow">
+                        <td> <button class="tempButton" >신청</button> </td><td>전공</td><td>8</td><td>창의설계</td><td>2</td><td>최병조</td><td>S7-311</td>
+                    </tr>
+                    <tr class = "sRow">
+                        <td> <button class="tempButton" >신청</button> </td><td>전공</td><td>18</td><td>오픈소스</td><td>3</td><td>강우철</td><td>S7-313</td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="thirdDiv">
+            <div class="titleDiv">
+                <span class="titleSpan">▶수강확정내역</span>
+                <span id="infoSpan">신청학점 : <span id="subGrade">0</span>/ 신청과목 수 : <span id="subNum">0</span> </span>
+            </div>
+            <div class="gapDiv">
+            </div>
+            <div class="tableDiv">
+                <table class="lecTable" id="myLectureTable">
+                    <tr class = "tHeader">
+                        <th>신청</th>
+                        <th>이수구분</th>
+                        <th>과목코드</th>
+                        <th>과목명</th>
+                        <th>학점</th>
+                        <th>담당교수</th>
+                        <th>강의실</th>
+                    </tr>
+                    <tbody>
+                    <tr class = "tRow">
+                        <td> <button class="tempDelButton" >삭제</button> </td><td>전공</td><td>15</td><td>임베디드</td><td>3</td><td>조중휘</td><td>S7-304</td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="Enrolment.js"></script>
+</body>
+</html>

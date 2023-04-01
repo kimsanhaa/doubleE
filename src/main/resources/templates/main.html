@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
-<div>안녕하세요 !!
-    <span id="userName">안정균</span>
-님 반갑습니다.</div>
-
-
-
-
 <div>
-    안녕하세요 !! ****님 반갑습니다.
+    안녕하세요 !! **님 반갑습니다.
     <table>
         <tr>
             <th>이름</th>
             <th>나이</th>
         </tr>
-        <tr th:each="user : ${data}">
-           <td>[[${user.name}]]</td>
-           <td>[[${user.age}]]</td>
-            <td><input type="button"/></td>
+        <tr class="trTag"th:each="user : ${data}">
+
+            <td>[[${user.name}]]</td>
+            <td>[[${user.age}]]</td>
+            <td><input class="btn" type="button"/></td>
+
         </tr>
     </table>
 
 
-    <div>
-        선택한 사람의 이름
-        <input></input>
-    </div>
-    <div>
-        선택한 사람의 나이
-        <input></input>
-    </div>
 </div>
+
+<table id="2ndTable">
+    <tr>
+        <th>이름</th>
+        <th>나이</th>
+    </tr>
+
+</table>
 </body>
+
+<script>
+    var tempData = "[[${data}]]";
+    //console.log(tempData);
+    urlget = new URLSearchParams(location.search);
+    var usrid = urlget.getAll('name');
+  //  console.log(usrid);
+
+    $("#userName").text(usrid);
+
+    //console.log($("#hval").val());
+
+    $(".btn").click(function(){
+
+
+        $("#2ndTable").children().append("<tr><td>");
+        $("#2ndTable").children().append($(this).parent().prev().prev().text());
+        $("#2ndTable").children().append("</td><td>");
+
+        $("#2ndTable").children().append($(this).parent().prev().text());
+        $("#2ndTable").children().append("</td></tr>");
+
+
+        $(this).parent().siblings().remove();
+        $(this).parent().remove();
+
+
+
+
+
+
+        // parents -> 전부다 지워짐
+        // parent -> 버튼만 지워짐
+
+
+
+    })
+
+    //new URLSearchParams(location.search).get(name:"name");
+    //안녕하세요!! usrid님 반갑습니다!
+    //document.write("안녕하세요!! "+ usrid + "님 반갑습니다!");
+</script>
+
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+
+</head>
+
+<body>
+<div id="titleBox">
+</div>
+    <button class="Btn" id="ajax1" type="button" >get ajax 쏘기!</button>
+    <button class="Btn" id="ajax2" type="button" >post ajax 쏘기!</button>
+</body>
+<script>
+    //console.log($("#userId").val());
+
+$("#ajax1").click(function() {
+    //locahost ~~~~/getAjax
+    $.ajax({
+        url: 'getAjax/sanha',
+        method: 'GET',
+        success: function (data) {
+            console.log(data);
+        }
+
+    })
+});
+    $("#ajax2").click(function(){
+        $.ajax({
+            url:'postAjax',
+            method:'POST',
+            data:{'name':'sanha','age':27},
+            success: function(data){
+               console.log(data);
+            }
+        })
+});
+
+</script>
+
+
+</html>

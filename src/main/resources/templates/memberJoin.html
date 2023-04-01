@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="memberJoinStyle.css" >
+</head>
+<body>
+<div id = "mainBox">
+    <div id = "titleBox" class = "bound">
+        <div id="semiTitle">회원가입</div>
+    </div>
+    <div id="joinBox" class = "bound"></div>
+    <span id="nameInput"><input id="newName" type="text" placeholder="이름"></input></span>
+    <span id="ageInput"><input id="newAge" type="number" placeholder="나이"></input></span>
+    <span id="idInput"><input id="newId" type="text" placeholder="아이디"></input></span>
+    <span id="pwInput"><input id="newPW" type="password" placeholder="비밀번호"></input></span>
+
+    <button id="joinBtn" type="button">회원가입하기</button>
+
+</div>
+
+</body>
+
+<script>
+
+    var pwNoCheck = /^[0-9]$/;
+    var pwEnCheck = /^[a-zA-Z]$/;
+    var pwCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,20}$/;
+    var nameNoCheck = /[0-9]/;
+    var nameSpCheck =  /[~!@#$%^&*()_+|<>?:{}]/;
+    //var nameCheck = /[0-9][~!@#$%^&*()_+|<>?:{}]/;
+    // 버튼활성/비활성화
+    $("#joinBtn").prop("disabled", true);
+
+    $("input").on('keyup', function (){ // input tag말고 다른것 사용
+        if($(this).val().length>0){
+            $("#joinBtn").prop("disabled", false);
+        }
+        else{
+            $("#joinBtn").prop("disabled", true);
+        }
+    })
+
+
+
+
+    if(($("#newName").val()=="") && ($("#newAge").val()=="") && ($("#newID").val()=="") && ($("#newPW").val()=="")){
+        //alert("내용없음");
+        $("#joinBtn").prop("disabled", true);
+    }
+
+    $("#joinBtn").click(function () {
+        //유효성검사 --> 나이-> 100살 미만:: id -> 20자 미만:: pw -> 영문, 숫자를 포함한 8~20글자::
+        $("span").remove('.IncorrectMessage');  // 경고메세지 지우기
+
+        // 미입력, 유효성 검사
+        if($("#newName").val() == ""){   // 이름 미입력시
+            $("#newName").after("<span class='IncorrectMessage'>이름을 입력해 주세요.</span>");
+            return false;
+        }
+        if(($("#newName").val()) != "" && (nameSpCheck.test($("#newName").val())||(nameNoCheck.test($("#newName").val())) )){
+            // 이름 유효성
+            $("#newName").after("<span class='IncorrectMessage'>이름은 숫자와 특수문자를 포함할 수 없습니다.</span>");
+            return false;
+        }
+        if($("#newAge").val() == ""){   // 나이 미입력시
+            $("#newAge").after("<span class='IncorrectMessage'>나이를 입력해 주세요.</span>");
+            return false;
+        }/*                             // 나이 유효성 검사는 실시하지 않음
+        if($("#newAge").val()>=100){    // 나이 유효성
+            $("#newAge").after("<span class='IncorrectMessage'>나이는 100살 미만이어야 합니다.</span>");
+        }*/
+        if($("#newId").val() == ""){   // ID 미입력시
+            $("#newId").after("<span class='IncorrectMessage'>아이디를 입력해 주세요.</span>");
+            return false;
+        }
+        if($("#newId").val().length >=20){  // ID 유효성
+            $("#newId").after("<span class='IncorrectMessage'>아이디는 20자 미만이어야 합니다.</span>");
+            return false;
+        }
+        if($("#newPW").val() == ""){   // PW 미입력시
+            $("#newPW").after("<span class='IncorrectMessage'>비밀번호를 입력해 주세요.</span>");
+            return false;
+        }
+        if(($("#newPW").val() != "")&&!pwCheck.test($("#newPW").val())){   // PW 유효성
+            $("#newPW").after("<span class='IncorrectMessage'>비밀번호는 영문, 숫자를 포함한 8~20 글자 이어야 합니다.</span>");
+            return false;
+        }
+
+        // 1. 19
+        // 추가하고 싶은 기능 ::  1. mainbox 내부 클릭시 경고메시지 지우기
+        //                     2. 버튼에 마우스 댈 때 활성화 여부 표시
+        //                     3. 경고메세지 출력 시 ajax 전송하지 않음
+
+ function successSignup() {
+     $.ajax({
+         type: 'POST',
+         uri: 'memberJoin',
+         data: {
+             'name': $("#newName").val(),   // 받는부분 변수이름과 같아야 한다
+             'age': $("#newAge").val(),
+             'id': $("#newId").val(),
+             'password': $("#newPW").val()
+         },
+         success: function (res) {
+             //-> 수강신청 페이지로 이동
+
+             console.log(res);
+         },
+         error: function (error) {
+             console.log(error);
+         }
+     })
+ }
+    });
+
+
+
+
+
+
+
+    $(".bound").click(function (){
+        $("span").remove('.IncorrectMessage');
+    })
+
+
+
+
+
+</script>
+
+</html>

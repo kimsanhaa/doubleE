@@ -4,37 +4,76 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <title>LOGIN</title>
+    <link rel="stylesheet" href="loginStyle.css" >   <!-- css 적용 -->
+
 
 </head>
 
 <body>
-<div id="temp">;lsdk'asd</div>
-<input id="userId" type="text" value="userId">아이디</input>
+<div id="titleBox">
+    수강신청
+</div>
+<div id="loginBox">
 
-<input id="userPassword" type="password">비밀번호</input>
+    <input id="userId" type="text">ID</input><br>
 
-<input id="loginBtn" type="button">로그인</input>
-<a href="main">sssss</a>
+    <input id="userPassword" type="password">PW</input><br>
+
+    <button class="Btn" id="loginBtn" type="button" >로그인</button>
+    <button class="Btn" id="membershipBtn" type="button" >회원가입</button><br>
+    <a href="main">sss</a>
+
+</div>
+
+
+
 </body>
 <script>
-    console.log($("#userId").val());
+    //console.log($("#userId").val());
 
 $("#loginBtn").click(function(){
 
-        $("#userId").attr("value","value값 넣어주기!!!");
+    var pwCheck = /^[0-9]$/
+    alert(pwCheck.test($("#userPassword").val()));
+
+    console.log($("#userPassword").val());
+
+
+
+    if($("#userId").val().length>=5){
+        alert("ID는 5글자 미만이어야 합니다!");
+    }
+    if(($("#userPassword").val().length<10)||(pwCheck.test($("#userPassword").val()))){
+        if($("#userPassword").val().length<10){
+            alert("PW는 10글자 이상이어야 합니다!");
+        }
+        if(pwCheck.test($("#userPassword").val())){
+            alert("PW는 숫자가 포함되면 안됩니다");
+        }
+    }
+
+
 
         $("#userName").text();
 
         var pass=$("#userPassword").val();
         console.log($("#userId").val());
         console.log(pass);
-
+    // 2023 1.29 sanha
+    // ajax 요청하기 /login @Requestparam id,password
+    // 제대로 로그인 하면 ok 리턴 , 못하면 false 리턴
 
 
 
 
    // return(location.href='main.html')
 
+});
+
+// 1.05 추가(회원가입)
+$("#membershipBtn").click(function(){
+    //버튼 클릭시 memberJoin.html로 이동
+    location.href="memberJoin"; // 이동 됨!
 });
 
 </script>

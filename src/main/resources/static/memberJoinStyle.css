@@ -1,0 +1,93 @@
+html { background-color: lightcyan }
+
+ .input{display: block}
+
+#mainBox {
+    position: fixed;
+    left: 50%;
+}
+
+#titleBox {
+    position: fixed;
+    top: 123px;
+    /*left: 614px;*/
+    transform: translateX(-50%);
+    width: 372px;
+    height: 44px;
+    background-color: darkcyan;
+}
+
+#semiTitle{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    line-height: 44px;
+}
+
+
+#joinBox {
+    position: fixed;
+    top: 167px;
+    /*left: 614px;*/
+    transform: translate(-50%);
+
+    width: 372px;
+    height: 450px;
+    background-color: white;
+}
+
+#nameInput, #ageInput, #idInput, #pwInput {
+    position: fixed;
+    /*left: 699px;*/
+    /*transform: translate(-50%);*/
+    transform: translateX(-50%);
+    width: 206px;
+    height: 32px;
+    background-color: white;
+}
+#newName, #newAge, #newId, #newPW {
+    width: 206px;
+    height: 32px;
+    background-color: azure;
+}
+
+input::placeholder {
+    font-size: 16px;
+}
+/*input tag들 간격 조정 -> Figma도 수정*/
+#nameInput {
+    top: 264px;
+    font-size: 12px;
+    color: red;
+}
+#ageInput {
+    top: 324px;
+    font-size: 12px;
+    color: red;
+}
+#idInput {
+    top: 384px;
+    font-size: 12px;
+    color: red;
+}
+#pwInput {
+    top: 444px;
+    font-size: 12px;
+    color: red;
+}
+
+#joinBtn {
+    position: fixed;
+    /*left: 738px;*/
+    transform: translateX(-50%);
+    top: 524px;
+    width: 129px;
+    height: 46px;
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+}
+
+
